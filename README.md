@@ -1,5 +1,5 @@
 # What's this?
-This is a web app which helps manage and organize summer climbing school.
+(DRAFT) This is a web app which helps manage and organize summer climbing school.
 
 The web app supports working offline, since the daily school trips are often made in remote areas without an internet connection.
 
@@ -67,6 +67,7 @@ Fields:
 * `mobile` = mobile phone number
 * `email` = e-mail address
 * `exercises` = excercise ID's of excercise completed by the student
+* `left-school` = true if the student left/abandoned the school
 
 ## Doc type: `school-trip`
 Description: a trip made during a school season
@@ -112,3 +113,70 @@ Fields:
 * `could-lead` = staff member's assesment if the student could leade in the
 * `would-lead` = student's assessment if he/she would lead if presented the opportunity
 * `manager-notes` = notes made by the manager
+
+# Sitemap
+* Season Dashboard
+    * Trip Dasboard
+        * Staff
+            * Lists staff attending the trip
+            * New staff can be added from a search box
+            * New staff members can be added (if not found)
+            * Staff member can be edited
+        * Students - list of students attending the trip
+            * Each item shows if the student is attending
+            * Items can be edited > setting the status (attending/absent)
+            * Student info can be accessed (described down below)
+        * Exercise
+            * Exercises (tab) - list of planned exercise
+                * Each item can be expended to show a list of students with the status (done: yes/not)
+            * Students (tab) - list of all students at the trip
+                * Each item can be expended to show excercise report for the given student (done: yes/no)
+        * Climbing
+            * Routes (tab) - list of climbing plans pending or in progress
+                * Sub-tabs
+                    * Planned/inprogress
+                        Add button opens a *Climb planner editor*
+                    * Done
+                * Each item:
+                    * contains numeric indicator of climbes pending and ones in progress
+                    * can be expanded to show the list of all the attached climbing plans
+            * Students (tab)
+                * Climbing (sub-tab) - lists only students with climb pending or in progress
+                * All (sub-tab) - lists all the students attending the trip
+                    * "Assign climb" button displayed next to students not climbing
+                    * "Play" button displayed next to students pending to climb
+                    * "Done" button displayed next to students with climb in progress
+                    * "Interview" button displayed next to students with a finished climb
+            * Staff (tab) - list of staff members with a climbing plan pending or in progres
+                * Climbing (sub-tab) - lists only staff members with climb pending or in progress
+                * All (sub-tab) - lists all the staff members attending the trip
+                    * "Assign climb" button displayed next to staffers not climbing
+                    * "Play" button displayed next to staffers pending to climb
+                    * "Done" button displayed next to staffers with climb in progress
+                    * "Interview" button displayed next to staffers with a finished climb
+        * *Climb planner editor*
+            * Route - combo + add new button
+            * Student - combo
+            * Staff member - combo + add new button
+            * Student partner - combo
+            * Should lead - checkbox
+        * *Post-climb interview editor*
+            * Student comment
+            * Staff member comment
+            * Did lead
+            * Will lead
+    * Students
+        * New students can be added
+        * Each item can be clicked > Student info
+            * General (tab) - can be edited
+            * Exercises (tab)
+                * Total (sub-tab) - list of all the exercise student needs to performe during school
+                * History (sub-tab) - list of exercise performed at previous trips, grouped by trip
+            * Climbing (tab) 
+                * items are groupped by trip
+                * each item can be viewed i detail (edit is not posible)
+    * Admin
+        * New Season
+        * Edit season
+        * Locations - location list & editor
+        * Routes - route list & editor
