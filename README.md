@@ -75,16 +75,23 @@ Fields:
 * `area` = climbing area ID
 * `date` = date of the trip
 * `trip-managers` = IDs of the staff members who acts as trip managers
-* `staff` = IDs of staff members attending the trip
-* `students` = IDs of students attending the trip
 * `exercises` = ID's of exercises planned for the trip
+
+## Doc type: `school-trip-staff`
+Description: staff attending a school trip
+
+* `trip` = ID of the trip
+* `staff` = ID of the staff member
+* `present` = which days will the student be present at the trip (*both* / *sat* / *sun*)
+* `can-climb` = will/can the staff member climb (*true* / *false*)
+* `notes` = optional notes
 
 ## Doc type: `school-trip-student`
 Description: student attending a school trip
 
 * `trip` = ID of the trip
 * `student` = ID of the student
-* `absent` = true if the student will not attend the trip
+* `present` = which days will the student be present at the trip (*none* / *both* / *sat* / *sun*)
 * `exercises` = ID's of exercises done by the student
 * `notes` = optional notes about the student
 
@@ -92,15 +99,16 @@ Description: student attending a school trip
 Description: climb performed during a school trip
 
 Fields:
-* `school-trip`: ID of the school trip
-* `route`: ID of the route
-* `students`: ID of the student performing the climb
-* `staff`: ID of the staff member supervising the climb
-* `student-partner`: (optional) ID of student climbing partner (not set if the staff member is the climbing partner)
-* `staff-interview`: a post-climb interview with the staff member
-* `student-interview`: a post-climb interview with studnet
-* `should-lead`: should the student lead any of the pitches?
-* `did-lead`: has the student lead any of the pitches
-* `could-lead`: staff member's assesment if the student could leade
-* `would-lead`: student's assessment if he/she would lead if presented the opportunity
-* `manager-notes`: notes made by the manager
+* `school-trip` = ID of the school trip
+* `date` = date of the climb
+* `route` = ID of the route
+* `students` = ID of the student performing the climb
+* `staff` = ID of the staff member supervising the climb
+* `student-partner` = (optional) ID of student climbing partner (not set if the staff member is the climbing partner)
+* `staff-interview` = a post-climb interview with the staff member
+* `student-interview` = a post-climb interview with studnet
+* `should-lead` = should the student lead any of the pitches?
+* `did-lead` = has the student lead any of the pitches
+* `could-lead` = staff member's assesment if the student could leade in the
+* `would-lead` = student's assessment if he/she would lead if presented the opportunity
+* `manager-notes` = notes made by the manager
